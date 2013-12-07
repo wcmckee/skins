@@ -63,6 +63,38 @@ iimg5.show()
 
 # <codecell>
 
+effectList = ['difference', 'darker', 'lighter', 'multiply', 'screen']
+
+# <codecell>
+
+lenEff = len(effectList)
+
+# <codecell>
+
+print lenEff
+
+# <codecell>
+
+daChoice = random.choice(effectList)
+
+# <codecell>
+
+print daChoice
+
+# <codecell>
+
+mergeChop = 'ImageChops.' + daChoice
+
+# <codecell>
+
+print mergeChop
+
+# <markdowncell>
+
+# apply this effect to the files
+
+# <codecell>
+
 iimg3 = ImageChops.difference(iimg, iimg2)
 
 # <codecell>
@@ -107,10 +139,71 @@ iimg5.show()
 
 # <codecell>
 
+iimgz7 = ImageChops.darker(iimg5, iimg9swap)
+
+# <codecell>
+
+iimgz7.show()
+
+# <codecell>
+
+iimgz8 = iimgz7.filter(ImageFilter.DETAIL)
+
+# <codecell>
+
+iimgz8.show()
+
+# <codecell>
+
+iimgz2 = ImageChops.blend(iimg5, iimg3, .2)
+
+# <codecell>
+
+iimgz2.show()
+
+# <codecell>
+
+imgz10 = iimgz2.filter(ImageFilter.CONTOUR)
+
+# <codecell>
+
+imgz10.show()
+
+# <codecell>
+
+InImgz10 = ImageChops.invert(imgz10)
+
+# <codecell>
+
+InImgz10.show()
+
+# <codecell>
+
+fixImg = ImageEnhance.Color(InImgz10)
+DieImage = ImageEnhance.Contrast(InImgz10)
+
+# <codecell>
+
+newFix = fixImg.enhance(50)
+
+# <codecell>
+
+dieFix = DieImage.enhance(10)
+
+# <codecell>
+
+blenzImg = ImageChops.difference(dieFix, iimg8)
+
+# <codecell>
+
+blenzImg.show()
 
 # <codecell>
 
 randNumz = random.randint(1,10)
+
+# <codecell>
+
 
 # <codecell>
 
@@ -119,6 +212,10 @@ os.chdir('/home/will/Desktop/cook')
 # <codecell>
 
 showCook = Image.open(imagCook)
+
+# <codecell>
+
+from PIL import ImageFont
 
 # <codecell>
 
@@ -133,33 +230,27 @@ os.chdir('/home/will/Desktop/output')
 
 # <codecell>
 
-iimg3.save('image3.jpg')
-img6.save('image6.jpg')
+iimg3.save(imagRancz)
+img6.save(imagCook)
 iimg5.save(imagRanxz)
 
 # <codecell>
 
-ls
 
 # <codecell>
 
 
 # <codecell>
 
-img3blur = iimg3.filter(ImageFilter.BLUR)
 
 # <codecell>
 
-img3blur.show()
 
 # <codecell>
 
-img3other = iimg3.filter(ImageFilter.GaussianBlur)
-img3other.show()
 
 # <codecell>
 
-print img3other.format, img3other.size, img3other.mode
 
 # <codecell>
 
@@ -167,17 +258,12 @@ resize = (1920, 1080)
 
 # <codecell>
 
-img3other.resize(resize)
-img3other.save('large.jpg')
-img3other.show()
 
 # <codecell>
 
-ls
 
 # <codecell>
 
-largeImg3 = Image.open('large.jpg')
 
 # <codecell>
 
@@ -203,8 +289,16 @@ img7.save(imagRandz)
 # <codecell>
 
 enchane = ImageEnhance.Brightness(iimg)
-blendz = enchane.enhance(3)
+blendz = enchane.enhance(2)
 blendz.show()
+
+# <codecell>
+
+bluzImage = ImageChops.blend(iimgz2, iimg5, .3)
+
+# <codecell>
+
+bluzImage.show()
 
 # <codecell>
 
@@ -409,16 +503,12 @@ print BreakLast
 
 # <codecell>
 
-for data in BreakLast:
-    BreakLast.append('test')
 
 # <codecell>
 
-print BreakLast
 
 # <codecell>
 
-ls
 
 # <codecell>
 
@@ -446,11 +536,41 @@ mixCok.show()
 
 # <codecell>
 
-os.chdir('/home/will/Desktop/wirepil')
+os.chdir('/home/will/Desktop/arcticMonkeys/')
 
 # <codecell>
 
-ls
+cassie = random.choice(os.listdir('/home/will/Desktop/arcticMonkeys'))
+
+# <codecell>
+
+cassie2 = random.choice(os.listdir('/home/will/Desktop/arcticMonkeys'))
+
+# <codecell>
+
+arcImage = Image.open(cassie)
+
+# <codecell>
+
+arcImage2 = Image.open(cassie2)
+
+# <codecell>
+
+arcSwap = ImageChops.blend(arcImage, arcImage2, .5)
+
+# <codecell>
+
+arcSwap.show()
+
+# <codecell>
+
+arcBlend = ImageChops.darker(arcSwap, arcImage2)
+arcBlend.show()
+
+# <codecell>
+
+arcBlur = arcBlend.filter(ImageFilter.BLUR)
+arcBlur.show()
 
 # <codecell>
 
@@ -562,7 +682,6 @@ dinerList.append(pepChoice)
 
 # <codecell>
 
-dinerList
 
 # <codecell>
 
@@ -668,6 +787,15 @@ print roomNumb
 # <codecell>
 
 patDetail.append
+
+# <codecell>
+
+
+# <codecell>
+
+
+# <codecell>
+
 
 # <codecell>
 
