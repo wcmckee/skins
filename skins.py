@@ -13,29 +13,27 @@ import sys
 import glob
 
 # <codecell>
+dirimg = ('/var/www/html/artcontrol/wp-content/uploads/2013/06')
+# <codecell>
 
-devInput = ('/home/will/Desktop/video/street')
+os.chdir(dirimg)
 
 # <codecell>
 
-os.chdir('/home/will/Desktop/video/street')
-
-# <codecell>
-
-imagRancz = random.choice(os.listdir(devInput))
+imagRancz = random.choice(os.listdir(dirimg))
 
 # <codecell>
 
 
-imagRandz = random.choice(os.listdir(devInput))
+imagRandz = random.choice(os.listdir(dirimg))
 
 # <codecell>
 
-imagRanxz = random.choice(os.listdir(devInput))
+imagRanxz = random.choice(os.listdir(dirimg))
 
 # <codecell>
 
-imagCook = random.choice(os.listdir(devInput))
+imagCook = random.choice(os.listdir(dirimg))
 
 # <codecell>
 
@@ -225,7 +223,7 @@ arcImage3 = Image.open(cassie3)
 
 # <codecell>
 
-os.chdir('/home/will/Desktop/arcOut/')
+os.chdir('/home/wcmckee/Desktop/wireout')
 
 # <codecell>
 
